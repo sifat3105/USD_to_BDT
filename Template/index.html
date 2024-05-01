@@ -32,6 +32,18 @@
             display: flex;
             flex-direction: column;
         }
+        select {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
         input[type="number"] {
             padding: 12px;
             margin-bottom: 20px;
@@ -68,19 +80,20 @@
 <body>
     <div class="container">
         <h1>Currency Converter</h1>
-        <select name="options">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-        </select>
+      
           
         <form method="POST" action="{% url 'home_func' %}">
             {% csrf_token %}
+            <select name="options">
+                <option value="us">USD to BDT</option>
+                <option value="bd">BDT to USD</option>
+            </select>
 
-            <input type="number" placeholder="Enter amount in USD" name="usd" required>
+            <input type="number" placeholder="Enter amount" name="usd" required>
             <button type="submit">Convert</button>
         </form>
         
-        <p>{{ usd }} USD equals: {{ bdt }} BDT</p>
+        <p>{{ input_int }} {{curr1}} equals: {{ total }} {{curr2}}</p>
         
     </div>
 </body>
