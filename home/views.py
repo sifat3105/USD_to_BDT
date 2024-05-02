@@ -8,11 +8,11 @@ def home_func(request):
         option = request.POST.get('options')
         if option == 'us':
             num += 109.71
-            curr1= 'USD'
+            curr1= 'USD equals:'
             curr2= 'BDT'
         elif option =='bd':
             num += 0.0091
-            curr1= 'BDT'
+            curr1= 'BDT equals:'
             curr2 = 'USD'
     
         input_str = request.POST.get('usd')
