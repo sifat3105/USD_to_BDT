@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>{{massage}} </p>
+        <h1>Add data</h1>
+        <form action="POST">
+            <input type="text" placeholder= "name" name="name">
+            <input type="text" placeholder= "age" name="age">
+            <button type="submit">submit</button>
+        </form>
+
+        <ul>
+            {% for i in all_data%}
+            <li>name : {{i.name}}</li>
+            <li>age : {{i.age}}</li>
+            {% andfor %}
+        </ul>
+    </div>
+</body>
+</html>
